@@ -7,9 +7,9 @@ import java.util.List;
  */
 public class Diff {
 
-    public List<String> readFileToList(String filename)throws IOException{
+    public List<String> readFileToList(String filename) throws IOException {
         List<String> lines = new ArrayList<>();
-        try ( BufferedReader in = new BufferedReader(new FileReader(filename))){
+        try (BufferedReader in = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = in.readLine()) != null) {
                 lines.add(line);
@@ -17,29 +17,26 @@ public class Diff {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    return lines;
+        return lines;
     }
 
-    public void diff(String file1, String file2) throws IOException{
+    public void diff(String file1, String file2) throws IOException {
         List<String> lines1 = readFileToList(file1);
         List<String> lines2 = readFileToList(file2);
-        for(String line: lines2){
-                    if (!lines1.contains(line)){
-                        System.out.println("+" + line);
-                    }
-        }
-        for(String line: lines1){
-            if (!lines2.contains(line)){
-                System.out.println("-" + line);
+        for (String line : lines2) {
+            if (!lines1.contains(line)) {
+                System.out.println("+" + line);
             }
+        }
+        for (String line : lines1) {
+            if (!lines2.contains(line)) System.out.println("-" + line);
         }
     }
 
 
     public static void main(String[] args) throws IOException {
         Diff diff = new Diff();
-        diff.diff("xanadu.txt","xanaduNew.txt");
+        diff.diff("xanadu.txt", "xanaduNew.txt");
 
-        }
     }
 }
