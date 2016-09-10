@@ -8,7 +8,7 @@ import java.util.List;
 public class Diff {
 
     public List<String> readFileToList(String filename)throws IOException{
-        List<String> lines = new ArrayList<String>();
+        List<String> lines = new ArrayList<>();
         try ( BufferedReader in = new BufferedReader(new FileReader(filename))){
             String line;
             while ((line = in.readLine()) != null) {
