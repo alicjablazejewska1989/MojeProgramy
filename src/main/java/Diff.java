@@ -35,9 +35,11 @@ public class Diff {
         }
     }
 
+
     public static void main(String[] args) throws IOException {
         Diff diff = new Diff();
         diff.diff("xanadu.txt","xanaduNew.txt");
 
+        }
     }
 }
