@@ -15,7 +15,7 @@ public class HomeWork3 {
         persons.add(new Person("Andrzej", "Michalski", "Gdynia"));
         persons.add(new Person("Eleonora", "Drewska", "Kartuzy"));
         persons.add(new Person("Krystian", "Lisek", "Wilno"));
-        persons.add(new Person("Aurela", "Wilk", "Drezno"));
+        persons.add(new Person("Sandra", "Kochana", "Drezno"));
 
         Collections.sort(persons, new Comparator<Person>() {
             @Override
